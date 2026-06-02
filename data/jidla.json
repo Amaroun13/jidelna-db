@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "nazev": "Zapečený lilek s plísňovým sýrem, brambory s máslem",
+    "obrazek": "images/1.jpg"
+  },
+  {
+    "id": 2,
+    "nazev": "Řízek s bramborem",
+    "obrazek": "images/rizek.jpg"
+  }
+]
