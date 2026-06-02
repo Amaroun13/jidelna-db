@@ -1,1 +1,1 @@
-# jielna-db
+# jidelna-db
