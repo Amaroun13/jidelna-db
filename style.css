@@ -1,13 +1,28 @@
 body {
-    font-family: Arial;
-    max-width: 600 px;
-    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #faf3e0;
+    text-align: center;
+}
+
+#search {
+    display: block;
+    width: calc(100% - 40px);
+    max-width: 360px;
+    margin: 20px auto;
+    background-color: #f5e6c8; /* chlebová */
+    padding: 10px;
+    border-radius: 20px;
+    box-sizing: border-box;
 }
 
 #list div {
+    display: flex;
     padding: 10px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
+    justify-content: center;
 }
 
 .hidden {
@@ -18,3 +33,9 @@ body {
     width: 100%;
     border-radius: 8px;
 }
+/*
+ display: block;
+    width: calc(100% - 40px);
+    max-width: 360px;
+    margin: 20px auto 0;
+    box-sizing: border-box;

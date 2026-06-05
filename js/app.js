@@ -38,4 +38,5 @@ search.oninput = () => {
     zobrazJidla(filtrovane);
 };
 
+
 nactiJidla();
