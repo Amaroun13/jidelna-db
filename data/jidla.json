@@ -2,21 +2,49 @@
   {
     "id": 1,
     "nazev": "Zapečený lilek s plísňovým sýrem, brambory s máslem",
+    "nazev_bez_diakritiky": "Zapečeny lilek s plisnovym syrem, brambory s maslem",
     "obrazek": "images/1.webp"
   },
   {
     "id": 2,
     "nazev": "Kuřecí maso na paprice, těstoviny",
+    "nazev_bez_diakritiky": "Kureci maso na paprice, testoviny",
     "obrazek": "images/2.webp"
   },
   {
     "id": 3,
     "nazev": "Fisch & Chips (smažená treska + hranolky), zeleninový salát",
+    "nazev_bez_diakritiky": "Fisch & Chips (smažená treska + hranolky), zeleninový salát",
     "obrazek": "images/3.webp"
   },
   {
     "id": 4,
     "nazev": "Salát z čerstvého ovoce s müsli a jogurtem, croissant",
+    "nazev_bez_diakritiky": "Salát z čerstvého ovoce s müsli a jogurtem, croissant",
     "obrazek": "images/4.webp"
+  },
+  {
+    "id": 5,
+    "nazev": "Kung-pao, jasmínová rýže",
+    "nazev_bez_diakritiky": "Kung-pao, jasminová ryze",
+    "obrazek": "images/5.webp"
+  },
+  {
+    "id": 6,
+    "nazev": "Filet z lososa, zeleninové trio v páře, opečené bramborové plátky",
+    "nazev_bez_diakritiky": "Filet z lososa, zeleninove trio v pare, opecene bramborove platky",
+    "obrazek": "images/6.webp"
+  },
+  {
+    "id": 7,
+    "nazev": "Nudle s mákem polévané máslem",
+    "nazev_bez_diakritiky": "Nudle s makem polevane maslem",
+    "obrazek": "images/7.webp"
+  },
+  {
+    "id": 8,
+    "nazev": "Kuře na zelí, brambory s máslem",
+    "nazev_bez_diakritiky": "Kure na zeli, brambory s maslem",
+    "obrazek": "images/8.webp"
   }
 ]

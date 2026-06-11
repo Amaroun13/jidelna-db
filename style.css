@@ -29,9 +29,49 @@ body {
     display: none;
 }
 
+#detail {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#detail:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 #detail img {
     width: 100%;
     border-radius: 8px;
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+#detail img.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+button {
+    display: inline-block;
+    margin: 20px auto 10px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    background-color: #f5e6c8;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #e5d1a2;
+}
+
+button:active {
+    transform: translateY(1px);
 }
 /*
  display: block;
