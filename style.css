@@ -1,9 +1,31 @@
 body {
+    position: relative;
+    min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     max-width: 600px;
     margin: 0 auto;
     background-color: #faf3e0;
     text-align: center;
+}
+
+h2 {
+    position: relative;
+    z-index: 2;
+    width: min(90vw, 560px);
+    margin: 20px auto 0;
+    font-family: "Segoe UI", "Trebuchet MS", Arial, sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
+    color: #4d3520;
+    text-transform: none;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75), 2px 2px 0 rgba(180, 138, 89, 0.25);
+    pointer-events: none;
+}
+
+body.detail-open h2 {
+    display: none;
 }
 
 #search {
@@ -19,10 +41,37 @@ body {
 
 #list div {
     display: flex;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eadfc8;
     cursor: pointer;
     justify-content: center;
+    background-color: #fffaf0;
+    transition: background-color 0.2s ease;
+}
+
+#list {
+    position: absolute;
+    top: 94px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: calc(100% - 40px);
+    max-width: 360px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 1px solid #e2d2b2;
+    border-radius: 12px;
+    background-color: #fffaf0;
+    box-shadow: 0 4px 12px rgba(95, 72, 35, 0.1);
+    box-sizing: border-box;
+}
+
+#list div:last-child {
+    border-bottom: 0;
+}
+
+#list div:hover {
+    background-color: #f5e6c8;
 }
 
 .hidden {
@@ -30,6 +79,8 @@ body {
 }
 
 #detail {
+    position: relative;
+    z-index: 5;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.25s ease, transform 0.25s ease;
@@ -41,6 +92,8 @@ body {
 }
 
 #detail img {
+    position: relative;
+    z-index: 10;
     width: 100%;
     border-radius: 8px;
     opacity: 0;

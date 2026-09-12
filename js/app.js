@@ -3,6 +3,7 @@ const list = document.getElementById("list");
 const detail = document.getElementById("detail");
 const search = document.getElementById("search");
 const detailImg = document.getElementById("detail-img");
+const body = document.body;
 
 detailImg.onload = () => {
     detailImg.classList.add("show");
@@ -24,6 +25,7 @@ function zobrazJidla(data) {
 }
 
 function zobrazDetail(jidlo) {
+    body.classList.add("detail-open");
     list.classList.add("hidden");
     detail.classList.remove("hidden");
 
@@ -50,6 +52,7 @@ function ukryjSeznam() {
 }
 
 document.getElementById("back").onclick = () => {
+    body.classList.remove("detail-open");
     detail.classList.add("hidden");
     list.classList.remove("hidden");
 };
