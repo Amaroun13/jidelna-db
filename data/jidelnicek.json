@@ -1,0 +1,2151 @@
+{
+    "canteen": {
+        "datcas_akt": [
+            "2026-09-13T18:00:48.8833774"
+        ],
+        "urlwsdl_s-url": [
+            "https://wss5.strava.cz/WSStravne5_7/WSStravne5.svc"
+        ],
+        "urlwsdl_s": [
+            "b4f472954c80c5ee400fe3fcbd6bc006a74f3b3c7ba7af372687989a2b148b6dcf90ad041f8901ab6e2031f01d7fc8a0a830dcb437a9296b55eefaaae8050176"
+        ],
+        "ign_cert": [
+            "N"
+        ],
+        "text_anon": [
+            ""
+        ],
+        "text_uziv": [
+            ""
+        ],
+        "pasivni_oi": [
+            "N"
+        ],
+        "betatest": [
+            "N"
+        ],
+        "gpssirka": [
+            "49.21442"
+        ],
+        "gpsdelka": [
+            "16.5614485"
+        ],
+        "logo": [
+            ""
+        ],
+        "veta": [
+            21199
+        ],
+        "zarizeni": [
+            "1437"
+        ],
+        "popis": [
+            "SŠ informatky a služeb Brno"
+        ],
+        "zeme": [
+            "CZ"
+        ],
+        "verze": [
+            "5.14"
+        ],
+        "online": [
+            "N"
+        ],
+        "v_nazev": [
+            "Střední škola a vyšší odborná škola informatiky a financí Brno, příspěvková organizace"
+        ],
+        "v_ulice": [
+            "Čichnova 982/23"
+        ],
+        "v_mesto": [
+            "Brno"
+        ],
+        "v_psc": [
+            "624 00"
+        ],
+        "v_telefon": [
+            "541 123 247"
+        ],
+        "v_ucet": [
+            ""
+        ],
+        "v_email": [
+            "zdenka.adamcova@cichnovabrno.cz"
+        ],
+        "v_url": [
+            ""
+        ]
+    },
+    "meals": {
+        "table0": [
+            {
+                "id": 0,
+                "datum": "14.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Rohlíky 3ks, máslo, sýr Apetito 50g, čaj",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "14.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Jogurtový zákys z farmy Devět křížů, ovoce",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "07 Mléko",
+                "alergeny": [
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "14.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka hrstková",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "01 Obiloviny obsahující lepek|06 Sójové boby|09 Celer",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "06",
+                        "Sójové boby"
+                    ],
+                    [
+                        "09",
+                        "Celer"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "14.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Srbské rizoto sypané sýrem, okurka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "14.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Vařené vejce, koprová omáčka, brambory",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "14.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Salát ze špaget se sušenými rajčaty, jarní cibulkou a mozzarellou",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "14.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Hovězí guláš, knedlík",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "14.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Ovocný balíček",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table1": [
+            {
+                "id": 0,
+                "datum": "15.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Bábovka mramorová, čaj, bílá káva - mléko z farmy Devět křížů",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "15.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Chléb s máslem a debrecínkou, mléko 0,2l",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "15.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka krupicová s vejci",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|09 Celer",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "09",
+                        "Celer"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "15.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Vepřová pečeně pražská, těstoviny",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "15.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Kuřecí nudličky přírodní, zeleninový kuskus",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|07 Mléko|09 Celer",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ],
+                    [
+                        "09",
+                        "Celer"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "15.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Řecký salát s olivami, celozrnný rohlík",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "15.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Filet z telápie (ryba), bramborová kaše, ovoce",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|04 Ryby|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "04",
+                        "Ryby"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "15.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Ovocný balíček",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table2": [
+            {
+                "id": 0,
+                "datum": "16.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Grahamové rohlíky 2ks, sýr Cottage, čaj",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "16.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Chléb, pomazánka šunková pěna, ředvičky",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "16.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka slepičí s písmenky",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|09 Celer",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "09",
+                        "Celer"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "16.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Moravský vrabec, hlávkové zelí, knedlík (celozrnný+houskový)",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "16.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Hrachová kaše, opečená klobása, chléb, okurka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|06 Sójové boby|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "06",
+                        "Sójové boby"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "16.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Míchaný zeleninový salát s cibulovými kroužky, kaiserka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "16.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Pečené kuřecí stehno, dušená rýže, okurkový salát",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "16.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Ovocný balíček",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table3": [
+            {
+                "id": 0,
+                "datum": "17.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Rohlíky 2ks, \"Tvarohová svačinka\", čaj",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "17.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Croissant multicereální, mléko 0,5l",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "17.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka dýňová se slunečnicovými semínky",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko|09 Celer",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ],
+                    [
+                        "09",
+                        "Celer"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "17.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Kuře na paprice, těstoviny",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "17.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Palačinky s ovocným jogurtem z farmy Devět křížů",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "17.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Salát Coleslaw, kuřecí stripsy, česneková bagetka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko|10 Hořčice",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ],
+                    [
+                        "10",
+                        "Hořčice"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "17.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Sekaná pečeně, šťouchané brambory, okurka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "17.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Ovocný balíček",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table4": [
+            {
+                "id": 0,
+                "datum": "18.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Kaiserky 2ks, máslo, paštika, čaj",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "18.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Sendvič se šunkou a sýrem, ovoce",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko|10 Hořčice",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ],
+                    [
+                        "10",
+                        "Hořčice"
+                    ]
+                ],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "18.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka zelná s klobásou",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "01 Obiloviny obsahující lepek|07 Mléko|09 Celer",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ],
+                    [
+                        "09",
+                        "Celer"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "18.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Smažené rybí filé, vídeňský bramborový salát",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|04 Ryby|07 Mléko|09 Celer|10 Hořčice",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "04",
+                        "Ryby"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ],
+                    [
+                        "09",
+                        "Celer"
+                    ],
+                    [
+                        "10",
+                        "Hořčice"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "18.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Bosenský guláš, chléb",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "18.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Vajíčkový salát 350g, celozrnný chléb",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko|10 Hořčice",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ],
+                    [
+                        "10",
+                        "Hořčice"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "18.09.2026",
+                "druh_popis": "Balíček Pá ",
+                "druh_chod": "Oběd",
+                "nazev": "Koláč 2ks, mléko 0,2l",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "01 Obiloviny obsahující lepek|03 Vejce|07 Mléko",
+                "alergeny": [
+                    [
+                        "01",
+                        "Obiloviny obsahující lepek"
+                    ],
+                    [
+                        "03",
+                        "Vejce"
+                    ],
+                    [
+                        "07",
+                        "Mléko"
+                    ]
+                ],
+                "chod": "C",
+                "druh": "BA",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table5": [
+            {
+                "id": 0,
+                "datum": "21.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Snídaně",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "21.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Svačina",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "21.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "21.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "21.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "21.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 3",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "21.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "21.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table6": [
+            {
+                "id": 0,
+                "datum": "22.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Snídaně",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "22.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Svačina",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "22.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "22.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "22.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "22.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 3",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "22.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "22.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table7": [
+            {
+                "id": 0,
+                "datum": "23.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Snídaně",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "23.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Svačina",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "23.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "23.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "23.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "23.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 3",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "23.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "23.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table8": [
+            {
+                "id": 0,
+                "datum": "24.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Snídaně",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "24.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Svačina",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "24.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "24.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "24.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "24.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 3",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "24.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "24.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table9": [
+            {
+                "id": 0,
+                "datum": "25.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Snídaně",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "25.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Svačina",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "25.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "25.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "25.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "25.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 3",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "25.09.2026",
+                "druh_popis": "Balíček Pá ",
+                "druh_chod": "Oběd",
+                "nazev": "Balíček Pá",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "BA",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table10": [
+            {
+                "id": 0,
+                "datum": "29.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Snídaně",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "29.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Svačina",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "29.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "29.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "29.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "29.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 3",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "29.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "29.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ],
+        "table11": [
+            {
+                "id": 0,
+                "datum": "30.09.2026",
+                "druh_popis": "Snídaně ",
+                "druh_chod": "Snídaně",
+                "nazev": "Snídaně",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "A",
+                "druh": "SN",
+                "multipleNazev": "meal0",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 1,
+                "datum": "30.09.2026",
+                "druh_popis": "Přesnídávka ",
+                "druh_chod": "Svačina",
+                "nazev": "Svačina",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "B",
+                "druh": "SV",
+                "multipleNazev": "meal1",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 2,
+                "datum": "30.09.2026",
+                "druh_popis": "Polévka ",
+                "druh_chod": "Oběd",
+                "nazev": "Polévka",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "A",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "PO",
+                "multipleNazev": "meal2",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 3,
+                "datum": "30.09.2026",
+                "druh_popis": "Oběd 1 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O1",
+                "multipleNazev": "meal3",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 4,
+                "datum": "30.09.2026",
+                "druh_popis": "Oběd 2 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O2",
+                "multipleNazev": "meal4",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 5,
+                "datum": "30.09.2026",
+                "druh_popis": "Oběd 3 ",
+                "druh_chod": "Oběd",
+                "nazev": "Oběd 3",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "C",
+                "druh": "O3",
+                "multipleNazev": "meal5",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 6,
+                "datum": "30.09.2026",
+                "druh_popis": "Večeře 1 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 1",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V1",
+                "multipleNazev": "meal6",
+                "version": 5,
+                "obrazky": []
+            },
+            {
+                "id": 7,
+                "datum": "30.09.2026",
+                "druh_popis": "Večeře 2 ",
+                "druh_chod": "Večeře",
+                "nazev": "Večeře 2",
+                "delsiPopis": "",
+                "cisloJidelnicku": "1",
+                "polevka": "N",
+                "alergeny_text": "",
+                "alergeny": [],
+                "chod": "E",
+                "druh": "V2",
+                "multipleNazev": "meal7",
+                "version": 5,
+                "obrazky": []
+            }
+        ]
+    },
+    "objednavkyOdDo": "17.8.2026 - 30.9.2026"
+}

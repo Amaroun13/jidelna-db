@@ -28,6 +28,10 @@ body.detail-open h2 {
     display: none;
 }
 
+#obed-menu p {
+    white-space: pre-line;
+}
+
 #search {
     display: block;
     width: calc(100% - 40px);
