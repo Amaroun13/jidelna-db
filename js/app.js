@@ -1,4 +1,5 @@
 let jidla = [];
+let vyhledavac;
 const list = document.getElementById("list");
 const detail = document.getElementById("detail");
 const search = document.getElementById("search");
@@ -14,6 +15,12 @@ detailImg.onload = () => {
 async function nactiJidla() {
     const res = await fetch("data/jidla.json");
     jidla = await res.json();
+    vyhledavac = new Fuse(jidla, {
+        keys: ["nazev"],
+        threshold: 0.4,
+        ignoreLocation: true,
+        ignoreDiacritics: true
+    });
 }
 
 function formatDatum(datum) {
@@ -33,14 +40,40 @@ function menuProDatum(jidelnicek, datum) {
     });
 }
 
+function najdiJidlo(nazev) {
+    if (nazev === "-") return null;
+    return vyhledavac.search(nazev)[0]?.item || null;
+}
+
 function zobrazObedy(jidelnicek) {
     const dnes = new Date();
     const zitra = new Date(dnes);
     zitra.setDate(zitra.getDate() + 1);
-    const vypis = jidla => jidla.map((jidlo, index) => `${index + 1}. ${jidlo}`).join("\n");
+    const zobrazMenu = (cil, menu) => {
+        cil.replaceChildren();
+        menu.forEach((nazev, index) => {
+            if (index > 0) cil.appendChild(document.createTextNode("\n"));
+            cil.appendChild(document.createTextNode(`${index + 1}. `));
 
-    obedDnes.textContent = vypis(menuProDatum(jidelnicek, formatDatum(dnes)));
-    obedZitra.textContent = vypis(menuProDatum(jidelnicek, formatDatum(zitra)));
+            const jidlo = najdiJidlo(nazev);
+            if (!jidlo) {
+                cil.appendChild(document.createTextNode(nazev));
+                return;
+            }
+
+            const odkaz = document.createElement("a");
+            odkaz.href = "#";
+            odkaz.textContent = nazev;
+            odkaz.onclick = event => {
+                event.preventDefault();
+                zobrazDetail(jidlo);
+            };
+            cil.appendChild(odkaz);
+        });
+    };
+
+    zobrazMenu(obedDnes, menuProDatum(jidelnicek, formatDatum(dnes)));
+    zobrazMenu(obedZitra, menuProDatum(jidelnicek, formatDatum(zitra)));
 }
 
 async function nactiObedy() {
@@ -79,9 +112,11 @@ function normalizeText(text) {
 }
 
 function aktualizujSeznam() {
-    if (!jidla.length) return;
-    const text = normalizeText(search.value);
-    const filtrovane = jidla.filter(j => normalizeText(j.nazev).includes(text));
+    if (!vyhledavac) return;
+    const text = normalizeText(search.value.trim());
+    const filtrovane = text
+        ? vyhledavac.search(text).slice(0, 5).map(vysledek => vysledek.item)
+        : jidla.slice(0, 5);
     zobrazJidla(filtrovane);
     list.classList.remove("hidden");
 }
@@ -91,10 +126,17 @@ function ukryjSeznam() {
     list.classList.add("hidden");
 }
 
-document.getElementById("back").onclick = () => {
-    body.classList.remove("detail-open");
-    detail.classList.add("hidden");
-    list.classList.remove("hidden");
+document.getElementById("back").onclick = (event) => {
+    event.preventDefault();
+    if (detail.classList.contains("closing")) return;
+
+    detail.classList.add("closing");
+    setTimeout(() => {
+        detail.classList.remove("closing");
+        detail.classList.add("hidden");
+        body.classList.remove("detail-open");
+        list.classList.remove("hidden");
+    }, 350);
 };
 
 document.addEventListener("click", (event) => {
@@ -108,5 +150,9 @@ search.onfocus = aktualizujSeznam;
 search.onclick = aktualizujSeznam;
 search.oninput = aktualizujSeznam;
 
-nactiJidla();
-nactiObedy();
+async function inicializuj() {
+    await nactiJidla();
+    await nactiObedy();
+}
+
+inicializuj();
