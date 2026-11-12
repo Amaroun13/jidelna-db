@@ -63,6 +63,9 @@
   {
     "id": 13,
     "nazev": "Sekaná pečeně s červenou čočkou, brambory s petrželkou, okurka",
+    "alternativniNazvy": [
+      "Sekaná pečeně a červenou čočkou, brambory, obloha"
+    ],
     "obrazek": "images/13.webp"
   }
 ]

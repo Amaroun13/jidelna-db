@@ -27,12 +27,14 @@ h2 {
     pointer-events: none;
 }
 
-body.detail-open h2 {
+body.detail-open > h1,
+body.detail-open > h2 {
     display: none;
 }
 
-body.detail-open {
-    overflow: hidden;
+body.detail-open > #search,
+body.detail-open > #obed-menu {
+    display: none;
 }
 
 #obed-menu p {
@@ -61,7 +63,6 @@ body.detail-open {
     cursor: pointer;
     justify-content: center;
     background-color: #fffaf0;
-    transition: background-color 0.2s ease;
 }
 
 #list {
@@ -94,77 +95,26 @@ body.detail-open {
 }
 
 #detail {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 12px;
-    overflow: hidden;
     padding: 16px;
     box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-#detail::before {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-color: rgba(0, 0, 0, 0.65);
-    content: "";
-    opacity: 0;
-    transition: opacity 0.25s ease;
 }
 
 #detail.hidden {
     display: none;
 }
 
-#detail:not(.hidden) {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-#detail:not(.hidden)::before {
-    opacity: 1;
-}
-
-#detail.closing {
-    opacity: 0;
-    transform: translateY(10px);
-}
-
-#detail.closing::before {
-    opacity: 0;
-}
-
 #detail img {
-    position: relative;
-    z-index: 1;
     width: auto;
     height: auto;
-    max-width: calc(100vw - 32px);
-    max-height: calc(100vh - 96px);
+    max-width: 100%;
+    max-height: 70vh;
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    transform: scale(0.96);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-#detail img.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-#detail.closing img {
-    opacity: 0;
-    transform: scale(0.96);
 }
 
 button {
@@ -177,7 +127,6 @@ button {
     color: #333;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 #detail button {

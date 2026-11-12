@@ -8,18 +8,21 @@ const body = document.body;
 const obedDnes = document.getElementById("obed-dnes");
 const obedZitra = document.getElementById("obed-zitra");
 
-detailImg.onload = () => {
-    detailImg.classList.add("show");
-};
-
 async function nactiJidla() {
     const res = await fetch("data/jidla.json");
     jidla = await res.json();
-    vyhledavac = new Fuse(jidla, {
+    const indexJidel = jidla.flatMap(jidlo =>
+        nazvyJidla(jidlo).map(nazev => ({
+            jidlo,
+            nazev: normalizeText(nazev),
+            zobrazovanyNazev: nazev
+        }))
+    );
+    vyhledavac = new Fuse(indexJidel, {
         keys: ["nazev"],
         threshold: 0.4,
         ignoreLocation: true,
-        ignoreDiacritics: true
+        minMatchCharLength: 2
     });
 }
 
@@ -42,7 +45,33 @@ function menuProDatum(jidelnicek, datum) {
 
 function najdiJidlo(nazev) {
     if (nazev === "-") return null;
-    return vyhledavac.search(nazev)[0]?.item || null;
+    const hledanyNazev = normalizeText(nazev);
+    const presnaShoda = jidla.find(jidlo =>
+        nazvyJidla(jidlo).some(jinyNazev => normalizeText(jinyNazev) === hledanyNazev)
+    );
+    if (presnaShoda) return presnaShoda;
+
+    const hledanaSlova = slovaZNazvu(hledanyNazev);
+    if (hledanaSlova.length < 2) return null;
+
+    const vysledek = vyhledavac.search(hledanyNazev).find(polozka => {
+        const slovaJidla = slovaZNazvu(polozka.item.nazev);
+        const spolecnaSlova = slovaJidla.filter(slovo => hledanaSlova.includes(slovo));
+        const pokrytiKratsihoNazvu = spolecnaSlova.length / Math.min(hledanaSlova.length, slovaJidla.length);
+
+        return spolecnaSlova.length >= 2
+            && pokrytiKratsihoNazvu >= 0.6;
+    });
+
+    return vysledek?.item.jidlo || null;
+}
+
+function slovaZNazvu(nazev) {
+    return [...new Set(nazev.match(/\p{L}{3,}/gu) || [])];
+}
+
+function nazvyJidla(jidlo) {
+    return [jidlo.nazev, ...(jidlo.alternativniNazvy || [])];
 }
 
 function zobrazObedy(jidelnicek) {
@@ -62,12 +91,8 @@ function zobrazObedy(jidelnicek) {
             }
 
             const odkaz = document.createElement("a");
-            odkaz.href = "#";
+            odkaz.href = cestaKJidlu(jidlo);
             odkaz.textContent = nazev;
-            odkaz.onclick = event => {
-                event.preventDefault();
-                zobrazDetail(jidlo);
-            };
             cil.appendChild(odkaz);
         });
     };
@@ -91,10 +116,16 @@ function zobrazJidla(data) {
     list.innerHTML = "";
     data.forEach(jidlo => {
         const item = document.createElement("div");
-        item.textContent = jidlo.nazev;
-        item.onclick = () => zobrazDetail(jidlo);
+        const odkaz = document.createElement("a");
+        odkaz.href = cestaKJidlu(jidlo);
+        odkaz.textContent = jidlo.zobrazovanyNazev || jidlo.nazev;
+        item.appendChild(odkaz);
         list.appendChild(item);
     });
+}
+
+function cestaKJidlu(jidlo) {
+    return `#/jidlo/${encodeURIComponent(jidlo.id)}`;
 }
 
 function zobrazDetail(jidlo) {
@@ -103,7 +134,6 @@ function zobrazDetail(jidlo) {
     detail.classList.remove("hidden");
 
     document.getElementById("detail-nazev").textContent = jidlo.nazev;
-    detailImg.classList.remove("show");
     detailImg.src = jidlo.obrazek;
 }
 
@@ -114,9 +144,16 @@ function normalizeText(text) {
 function aktualizujSeznam() {
     if (!vyhledavac) return;
     const text = normalizeText(search.value.trim());
-    const filtrovane = text
-        ? vyhledavac.search(text).slice(0, 5).map(vysledek => vysledek.item)
-        : jidla.slice(0, 5);
+    const presne = text
+        ? jidla.filter(jidlo => normalizeText(jidlo.nazev).includes(text))
+        : jidla;
+    const filtrovane = (presne.length
+        ? presne
+        : vyhledavac.search(text).map(vysledek => ({
+            ...vysledek.item.jidlo,
+            zobrazovanyNazev: vysledek.item.zobrazovanyNazev
+        }))
+    ).slice(0, 5);
     zobrazJidla(filtrovane);
     list.classList.remove("hidden");
 }
@@ -126,18 +163,30 @@ function ukryjSeznam() {
     list.classList.add("hidden");
 }
 
+function skryjDetail() {
+    detail.classList.add("hidden");
+    body.classList.remove("detail-open");
+    list.classList.remove("hidden");
+}
+
 document.getElementById("back").onclick = (event) => {
     event.preventDefault();
-    if (detail.classList.contains("closing")) return;
-
-    detail.classList.add("closing");
-    setTimeout(() => {
-        detail.classList.remove("closing");
-        detail.classList.add("hidden");
-        body.classList.remove("detail-open");
-        list.classList.remove("hidden");
-    }, 350);
+    window.location.hash = "";
 };
+
+function aktualizujStranku() {
+    const shoda = window.location.hash.match(/^#\/jidlo\/(\d+)$/);
+    const id = shoda ? Number(shoda[1]) : null;
+    const jidlo = id ? jidla.find(polozka => polozka.id === id) : null;
+
+    if (jidlo) {
+        zobrazDetail(jidlo);
+    } else {
+        skryjDetail();
+    }
+}
+
+window.addEventListener("hashchange", aktualizujStranku);
 
 document.addEventListener("click", (event) => {
     const target = event.target;
@@ -153,6 +202,7 @@ search.oninput = aktualizujSeznam;
 async function inicializuj() {
     await nactiJidla();
     await nactiObedy();
+    aktualizujStranku();
 }
 
 inicializuj();
