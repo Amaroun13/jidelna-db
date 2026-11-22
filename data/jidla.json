@@ -22,6 +22,9 @@
   {
     "id": 5,
     "nazev": "Kung-pao, jasmínová rýže",
+    "alternativniNazvy": [
+      "Kuřecí kung-pao, dušená rýže"
+    ],
     "obrazek": "images/5.webp"
   },
   {

@@ -1,0 +1,57 @@
+name: Aktualizovat týdenní jídelníček
+
+on:
+  schedule:
+    - cron: "0 10 * * 3"
+    - cron: "0 11 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  aktualizovat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kód
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Závislosti
+        run: pip install requests
+
+      - name: Spustit pouze ve středu ve 12:00 podle Prahy
+        id: cas
+        run: |
+          python - <<'PY'
+          from datetime import datetime
+          import os
+          from zoneinfo import ZoneInfo
+          now = datetime.now(ZoneInfo("Europe/Prague"))
+          aktualizovat = now.weekday() == 2 and now.hour == 12
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"aktualizovat={'true' if aktualizovat else 'false'}\n")
+          PY
+
+      - name: Stáhnout jídelníček
+        if: steps.cas.outputs.aktualizovat == 'true'
+        run: python stahni_jidelnicek.py
+
+      - name: Doplnit nové položky pro ruční přiřazení
+        if: steps.cas.outputs.aktualizovat == 'true'
+        run: python priprav_prirazeni.py
+
+      - name: Uložit změny
+        if: steps.cas.outputs.aktualizovat == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/jidelnicek.json data/prirazeni-jidel.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Aktualizuj týdenní jídelníček"
+            git push
+          fi

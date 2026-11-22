@@ -65,6 +65,10 @@ body.detail-open > #obed-menu {
     background-color: #fffaf0;
 }
 
+#list a {
+    color: inherit;
+}
+
 #list {
     position: absolute;
     top: 94px;
@@ -115,6 +119,51 @@ body.detail-open > #obed-menu {
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+#reviews {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 520px);
+    padding: 16px;
+    border-radius: 12px;
+    background: #fffaf0;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#reviews h3,
+#reviews-score {
+    margin-top: 0;
+    text-align: center;
+}
+
+#reviews-list {
+    display: grid;
+    gap: 8px;
+}
+
+.review {
+    padding: 10px 12px;
+    border: 1px solid #eadfc8;
+    border-radius: 8px;
+}
+
+.review strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#review-discord {
+    display: block;
+    width: fit-content;
+    margin: 12px auto 0;
+    padding: 8px 14px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    background: #f5e6c8;
+    color: #333;
+    text-decoration: none;
 }
 
 button {

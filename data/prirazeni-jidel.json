@@ -1,0 +1,200 @@
+[
+  {
+    "datum": "12.11.2026",
+    "variant": "O1",
+    "nazev": "Sekaná pečeně a červenou čočkou, brambory, obloha",
+    "meal_id": null
+  },
+  {
+    "datum": "12.11.2026",
+    "variant": "O2",
+    "nazev": "Krupicová kaše se skořicí a máslem",
+    "meal_id": null
+  },
+  {
+    "datum": "12.11.2026",
+    "variant": "O3",
+    "nazev": "Marocký salát",
+    "meal_id": null
+  },
+  {
+    "datum": "13.11.2026",
+    "variant": "O1",
+    "nazev": "Hovězí pečeně burgunská, dušená rýže",
+    "meal_id": null
+  },
+  {
+    "datum": "13.11.2026",
+    "variant": "O2",
+    "nazev": "Filet z okouníka červeného, fazolové lusky v páře, brambory s máslem",
+    "meal_id": null
+  },
+  {
+    "datum": "13.11.2026",
+    "variant": "O3",
+    "nazev": "Salát z divoké rýže se zeleninou 350g",
+    "meal_id": null
+  },
+  {
+    "datum": "18.11.2026",
+    "variant": "O1",
+    "nazev": "Kuřecí kung-pao, dušená rýže",
+    "meal_id": null
+  },
+  {
+    "datum": "18.11.2026",
+    "variant": "O2",
+    "nazev": "Čočka na kyselo, vařené vejce, chléb, okurka",
+    "meal_id": null
+  },
+  {
+    "datum": "18.11.2026",
+    "variant": "O3",
+    "nazev": "Zeleninový salát s cibulovými kroužky, fin bageta",
+    "meal_id": null
+  },
+  {
+    "datum": "19.11.2026",
+    "variant": "O1",
+    "nazev": "Vepřová pečeně znojemská, těstoviny",
+    "meal_id": null
+  },
+  {
+    "datum": "19.11.2026",
+    "variant": "O2",
+    "nazev": "Smažené rybí filé, brambory s pažitkou, mrkvový salát",
+    "meal_id": null
+  },
+  {
+    "datum": "19.11.2026",
+    "variant": "O3",
+    "nazev": "Šopský salát, koláč Pizza",
+    "meal_id": null
+  },
+  {
+    "datum": "20.11.2026",
+    "variant": "O1",
+    "nazev": "Segedínský guláš, knedlík",
+    "meal_id": null
+  },
+  {
+    "datum": "20.11.2026",
+    "variant": "O2",
+    "nazev": "Francouzské brambory, okurka",
+    "meal_id": null
+  },
+  {
+    "datum": "20.11.2026",
+    "variant": "O3",
+    "nazev": "Těstovinový salát se sušenými rajčaty a mozzarellou",
+    "meal_id": null
+  },
+  {
+    "datum": "23.11.2026",
+    "variant": "O1",
+    "nazev": "Srbské rizoto z vepřového masa, okurka",
+    "meal_id": null
+  },
+  {
+    "datum": "23.11.2026",
+    "variant": "O2",
+    "nazev": "Špagety s bylinkovým pestem a sýrem",
+    "meal_id": null
+  },
+  {
+    "datum": "23.11.2026",
+    "variant": "O3",
+    "nazev": "Zeleninový salát s kuřecím kebabem, graham",
+    "meal_id": null
+  },
+  {
+    "datum": "24.11.2026",
+    "variant": "O1",
+    "nazev": "Indické kuřecí nudličky Masala, ryže basmati",
+    "meal_id": null
+  },
+  {
+    "datum": "24.11.2026",
+    "variant": "O2",
+    "nazev": "Smažený květák, brambory s máslem, omáčka tatarská",
+    "meal_id": null
+  },
+  {
+    "datum": "24.11.2026",
+    "variant": "O3",
+    "nazev": "Těstovinový salát s nivou a jogurtem",
+    "meal_id": null
+  },
+  {
+    "datum": "25.11.2026",
+    "variant": "O1",
+    "nazev": "Hovězí vařené, rajská omáčka, těstoviny",
+    "meal_id": null
+  },
+  {
+    "datum": "25.11.2026",
+    "variant": "O2",
+    "nazev": "Filet z lososa, zeleninové trio, opečené bramborové plátky",
+    "meal_id": null
+  },
+  {
+    "datum": "25.11.2026",
+    "variant": "O3",
+    "nazev": "Zeleninový salát s tuňákem a vejcem, dýňová bulka",
+    "meal_id": null
+  },
+  {
+    "datum": "26.11.2026",
+    "variant": "O1",
+    "nazev": "Uzené vařené, šťouchané brambory, okurka",
+    "meal_id": null
+  },
+  {
+    "datum": "26.11.2026",
+    "variant": "O2",
+    "nazev": "Gnochi s kuřecím masem, listovým špenátem a smetanou",
+    "meal_id": null
+  },
+  {
+    "datum": "26.11.2026",
+    "variant": "O3",
+    "nazev": "Salát Coleslaw, kuřecí stripsy, bagetka",
+    "meal_id": null
+  },
+  {
+    "datum": "27.11.2026",
+    "variant": "O1",
+    "nazev": "Čínské nudle s kuřecím gyrosem a zeleninou",
+    "meal_id": null
+  },
+  {
+    "datum": "27.11.2026",
+    "variant": "O2",
+    "nazev": "Bramborový guláš, chléb",
+    "meal_id": null
+  },
+  {
+    "datum": "27.11.2026",
+    "variant": "O3",
+    "nazev": "Zeleninový salát s balkánským sýrem, pečivo",
+    "meal_id": null
+  },
+  {
+    "datum": "30.11.2026",
+    "variant": "O1",
+    "nazev": "Oběd 1",
+    "meal_id": null
+  },
+  {
+    "datum": "30.11.2026",
+    "variant": "O2",
+    "nazev": "Oběd 2",
+    "meal_id": null
+  },
+  {
+    "datum": "30.11.2026",
+    "variant": "O3",
+    "nazev": "Oběd 3",
+    "meal_id": null
+  }
+]

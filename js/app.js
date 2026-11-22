@@ -46,28 +46,9 @@ function menuProDatum(jidelnicek, datum) {
 function najdiJidlo(nazev) {
     if (nazev === "-") return null;
     const hledanyNazev = normalizeText(nazev);
-    const presnaShoda = jidla.find(jidlo =>
+    return jidla.find(jidlo =>
         nazvyJidla(jidlo).some(jinyNazev => normalizeText(jinyNazev) === hledanyNazev)
-    );
-    if (presnaShoda) return presnaShoda;
-
-    const hledanaSlova = slovaZNazvu(hledanyNazev);
-    if (hledanaSlova.length < 2) return null;
-
-    const vysledek = vyhledavac.search(hledanyNazev).find(polozka => {
-        const slovaJidla = slovaZNazvu(polozka.item.nazev);
-        const spolecnaSlova = slovaJidla.filter(slovo => hledanaSlova.includes(slovo));
-        const pokrytiKratsihoNazvu = spolecnaSlova.length / Math.min(hledanaSlova.length, slovaJidla.length);
-
-        return spolecnaSlova.length >= 2
-            && pokrytiKratsihoNazvu >= 0.6;
-    });
-
-    return vysledek?.item.jidlo || null;
-}
-
-function slovaZNazvu(nazev) {
-    return [...new Set(nazev.match(/\p{L}{3,}/gu) || [])];
+    ) || null;
 }
 
 function nazvyJidla(jidlo) {
@@ -135,6 +116,7 @@ function zobrazDetail(jidlo) {
 
     document.getElementById("detail-nazev").textContent = jidlo.nazev;
     detailImg.src = jidlo.obrazek;
+    nactiRecenze(jidlo.id);
 }
 
 function normalizeText(text) {
