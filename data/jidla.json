@@ -70,5 +70,15 @@
       "Sekaná pečeně a červenou čočkou, brambory, obloha"
     ],
     "obrazek": "images/13.webp"
+  },
+{
+    "id": 14,
+    "nazev": "Špagety s bylinkovým pestem a sýrem",
+    "obrazek": "images/14.webp"
+  },
+{
+    "id": 15,
+    "nazev": "Zeleninový salát s kuřecím kebabem, graham",
+    "obrazek": "images/15.webp"
   }
 ]
