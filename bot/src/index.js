@@ -67,6 +67,8 @@ const prirazeniCache = {
     expiresAt: 0
 };
 
+const automaticPostKeysInProgress = new Set();
+
 const commands = [
     {
         name: "otevrit-jidlo",
@@ -157,56 +159,111 @@ function jeModerator(interaction) {
     return interaction.member.roles?.cache?.has(process.env.DISCORD_MODERATOR_ROLE_ID) || false;
 }
 
-async function createAutomaticReviewPost(mealId, mealName, scheduleDate, variant, closesAt) {
-    const forum = await client.channels.fetch(process.env.DISCORD_FORUM_ID);
-    if (!forum || forum.type !== ChannelType.GuildForum) return;
-
-    const existing = await supabase
+async function insertReviewPost(record, insertOptions = {}) {
+    let result = await supabase
         .from("review_posts")
+        .insert(record, insertOptions)
         .select("id")
-        .eq("meal_id", mealId)
-        .eq("schedule_date", scheduleDate)
-        .eq("meal_variant", variant)
         .maybeSingle();
 
-    if (existing.data) return;
+    if (result.error?.code !== "23505"
+        || !result.error.message?.includes("review_posts_pkey")) {
+        return result;
+    }
 
-    const reviewButton = new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-            .setCustomId(`review-modal:${mealId}`)
-            .setLabel("Napsat recenzi")
-            .setStyle(ButtonStyle.Primary)
-    );
+    const maxId = await supabase
+        .from("review_posts")
+        .select("id")
+        .order("id", { ascending: false })
+        .limit(1)
+        .maybeSingle();
 
-    const threadName = `${variant.toLowerCase()}-${mealId}-${normalizePostName(mealName)}`.slice(0, 100);
-    const thread = await forum.threads.create({
-        name: threadName,
-        autoArchiveDuration: ThreadAutoArchiveDuration.OneWeek,
-        reason: `Automaticke otevreni recenze ${scheduleDate}, ${variant}`,
-        message: {
-            embeds: [new EmbedBuilder()
-                .setTitle(mealName)
-                .setDescription(`Automatická recenze za ${scheduleDate}. Vyplňte hodnocení tlačítkem níže; moderátor ho schválí před zveřejněním na webu.`)
-                .addFields({ name: "Otevřeno do", value: `<t:${Math.floor(closesAt.getTime() / 1000)}:F>` })],
-            components: [reviewButton]
+    if (maxId.error || !maxId.data) return result;
+
+    return supabase
+        .from("review_posts")
+        .insert({ ...record, id: maxId.data.id + 1 }, insertOptions)
+        .select("id")
+        .maybeSingle();
+}
+
+async function createAutomaticReviewPost(mealId, mealName, scheduleDate, variant, closesAt) {
+    const postKey = `${scheduleDate}:${variant}`;
+    if (automaticPostKeysInProgress.has(postKey)) return;
+    automaticPostKeysInProgress.add(postKey);
+
+    let reservationId = null;
+    let thread = null;
+
+    try {
+        const forum = await client.channels.fetch(process.env.DISCORD_FORUM_ID);
+        if (!forum || forum.type !== ChannelType.GuildForum) return;
+
+        const reservation = await insertReviewPost({
+                meal_id: mealId,
+                meal_name: mealName,
+                discord_forum_id: forum.id,
+                discord_thread_id: `pending:${scheduleDate}:${variant}`,
+                closes_at: closesAt.toISOString(),
+                automatic: true,
+                schedule_date: scheduleDate,
+                meal_variant: variant
+            }, {
+                onConflict: "schedule_date,meal_variant",
+                ignoreDuplicates: true
+            });
+
+        if (reservation.error) {
+            console.error("Rezervaci automatického postu nebylo možné uložit:", reservation.error.message);
+            return;
         }
-    });
+        if (!reservation.data) return;
 
-    const { error } = await supabase.from("review_posts").insert({
-        meal_id: mealId,
-        meal_name: mealName,
-        discord_forum_id: forum.id,
-        discord_thread_id: thread.id,
-        closes_at: closesAt.toISOString(),
-        automatic: true,
-        schedule_date: scheduleDate,
-        meal_variant: variant
-    });
+        reservationId = reservation.data.id;
 
-    if (error) {
-        await thread.setLocked(true).catch(() => null);
-        await thread.setArchived(true).catch(() => null);
-        console.error("Automatický post nebylo možné uložit:", error.message);
+        const reviewButton = new ActionRowBuilder().addComponents(
+            new ButtonBuilder()
+                .setCustomId(`review-modal:${mealId}`)
+                .setLabel("Napsat recenzi")
+                .setStyle(ButtonStyle.Primary)
+        );
+
+        const threadName = `${variant.toLowerCase()}-${mealId}-${normalizePostName(mealName)}`.slice(0, 100);
+        thread = await forum.threads.create({
+            name: threadName,
+            autoArchiveDuration: ThreadAutoArchiveDuration.OneWeek,
+            reason: `Automaticke otevreni recenze ${scheduleDate}, ${variant}`,
+            message: {
+                embeds: [new EmbedBuilder()
+                    .setTitle(mealName)
+                    .setDescription(`Automatická recenze za ${scheduleDate}. Vyplňte hodnocení tlačítkem níže; moderátor ho schválí před zveřejněním na webu.`)
+                    .addFields({ name: "Otevřeno do", value: `<t:${Math.floor(closesAt.getTime() / 1000)}:F>` })],
+                components: [reviewButton]
+            }
+        });
+
+        const { error } = await supabase
+            .from("review_posts")
+            .update({ discord_thread_id: thread.id })
+            .eq("id", reservationId);
+
+        if (error) {
+            console.error("Discord vlákno nebylo možné propojit s automatickým postem:", error.message);
+            await thread.setLocked(true).catch(() => null);
+            await thread.setArchived(true).catch(() => null);
+            await supabase.from("review_posts").delete().eq("id", reservationId);
+        }
+    } catch (error) {
+        if (thread) {
+            await thread.setLocked(true).catch(() => null);
+            await thread.setArchived(true).catch(() => null);
+        }
+        if (reservationId) {
+            await supabase.from("review_posts").delete().eq("id", reservationId);
+        }
+        console.error("Automatický post se nepodařilo vytvořit:", error.message);
+    } finally {
+        automaticPostKeysInProgress.delete(postKey);
     }
 }
 
@@ -216,7 +273,7 @@ async function syncAutomaticReviewPosts() {
     const nowParts = pragueDateParts();
     const minuteOfDay = nowParts.hour * 60 + nowParts.minute;
 
-    if (minuteOfDay < 10 * 60) return;
+    if (minuteOfDay < 11 * 60) return;
 
     const scheduleDate = formatMenuDate(nowParts);
     const prirazeniUrl = process.env.PRIRAZENI_URL
@@ -305,7 +362,7 @@ async function createReviewPost(interaction) {
         }
     });
 
-    const { error } = await supabase.from("review_posts").insert({
+    const { error } = await insertReviewPost({
         meal_id: mealId,
         meal_name: mealName,
         discord_forum_id: forum.id,

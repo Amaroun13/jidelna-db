@@ -21,7 +21,7 @@ GitHub Actions
 
 Discord bot na platformě Pella
  |
- +-- každý den od 10:00 vytváří příspěvky ve fóru
+ +-- každý den od 11:00 vytváří příspěvky ve fóru
  +-- přijímá recenze prostřednictvím tlačítka a modálního formuláře
  +-- odesílá recenze moderátorům ke schválení
 
@@ -88,7 +88,7 @@ AUTO_REVIEWS_ENABLED=true
 Systém dodržuje následující pravidla:
 
 - Bot kontroluje aktuální čas každou minutu.
-- Vlákna se otevírají každý den od 10:00 podle časového pásma Europe/Prague.
+- Vlákna se otevírají každý den od 11:00 podle časového pásma Europe/Prague.
 - Následující den v 9:59 se vlákna uzavřou a archivují.
 - Jídla se načítají ze souboru `data/prirazeni-jidel.json`.
 - Záznamy s hodnotou `meal_id: null` se přeskočí.
