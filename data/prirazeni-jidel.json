@@ -111,37 +111,37 @@
     "datum": "24.11.2026",
     "variant": "O1",
     "nazev": "Indické kuřecí nudličky Masala, ryže basmati",
-    "meal_id": null
+    "meal_id": 17
   },
   {
     "datum": "24.11.2026",
     "variant": "O2",
     "nazev": "Smažený květák, brambory s máslem, omáčka tatarská",
-    "meal_id": null
+    "meal_id": 18
   },
   {
     "datum": "24.11.2026",
     "variant": "O3",
     "nazev": "Těstovinový salát s nivou a jogurtem",
-    "meal_id": null
+    "meal_id": 19
   },
   {
     "datum": "25.11.2026",
     "variant": "O1",
     "nazev": "Hovězí vařené, rajská omáčka, těstoviny",
-    "meal_id": null
+    "meal_id": 20
   },
   {
     "datum": "25.11.2026",
     "variant": "O2",
     "nazev": "Filet z lososa, zeleninové trio, opečené bramborové plátky",
-    "meal_id": null
+    "meal_id": 6
   },
   {
     "datum": "25.11.2026",
     "variant": "O3",
     "nazev": "Zeleninový salát s tuňákem a vejcem, dýňová bulka",
-    "meal_id": null
+    "meal_id": 22
   },
   {
     "datum": "26.11.2026",

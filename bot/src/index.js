@@ -166,25 +166,63 @@ async function insertReviewPost(record, insertOptions = {}) {
         .select("id")
         .maybeSingle();
 
-    if (result.error?.code !== "23505"
-        || !result.error.message?.includes("review_posts_pkey")) {
+    if (result.error?.code !== "23505") {
         return result;
     }
 
-    const maxId = await supabase
-        .from("review_posts")
-        .select("id")
-        .order("id", { ascending: false })
-        .limit(1)
-        .maybeSingle();
+    const conflictText = `${result.error.message || ""} ${result.error.details || ""}`;
+    if (!conflictText.includes("review_posts_pkey")
+        && !conflictText.toLowerCase().includes("duplicate key")) {
+        return result;
+    }
 
-    if (maxId.error || !maxId.data) return result;
+    let nextId = null;
+    for (let attempt = 0; attempt < 5; attempt += 1) {
+        const maxId = await supabase
+            .from("review_posts")
+            .select("id")
+            .order("id", { ascending: false })
+            .limit(1)
+            .maybeSingle();
 
-    return supabase
+        if (maxId.error) return maxId;
+        nextId = (maxId.data?.id || 0) + 1;
+
+        result = await supabase
+            .from("review_posts")
+            .insert({ ...record, id: nextId }, insertOptions)
+            .select("id")
+            .maybeSingle();
+
+        if (!result.error || result.error.code !== "23505") return result;
+    }
+
+    return result;
+}
+
+async function removeStaleReviewPost(row) {
+    if (!row?.discord_thread_id || row.discord_thread_id.startsWith("pending:")) {
+        await supabase.from("review_posts").delete().eq("id", row.id);
+        return true;
+    }
+
+    const thread = await client.channels.fetch(row.discord_thread_id).catch(() => null);
+    if (thread) return false;
+
+    await supabase.from("review_posts").delete().eq("id", row.id);
+    return true;
+}
+
+async function reconcileMissingReviewThreads() {
+    const { data, error } = await supabase
         .from("review_posts")
-        .insert({ ...record, id: maxId.data.id + 1 }, insertOptions)
-        .select("id")
-        .maybeSingle();
+        .select("id, discord_thread_id");
+
+    if (error || !data) return;
+
+    for (const row of data) {
+        await removeStaleReviewPost(row);
+    }
 }
 
 async function createAutomaticReviewPost(mealId, mealName, scheduleDate, variant, closesAt) {
@@ -198,6 +236,18 @@ async function createAutomaticReviewPost(mealId, mealName, scheduleDate, variant
     try {
         const forum = await client.channels.fetch(process.env.DISCORD_FORUM_ID);
         if (!forum || forum.type !== ChannelType.GuildForum) return;
+
+        const existing = await supabase
+            .from("review_posts")
+            .select("id, discord_thread_id")
+            .eq("schedule_date", scheduleDate)
+            .eq("meal_variant", variant)
+            .maybeSingle();
+
+        if (existing.data) {
+            const removed = await removeStaleReviewPost(existing.data);
+            if (!removed) return;
+        }
 
         const reservation = await insertReviewPost({
                 meal_id: mealId,
@@ -330,15 +380,27 @@ async function createReviewPost(interaction) {
         .from("review_posts")
         .select("*")
         .eq("meal_id", mealId)
-        .limit(1)
-        .maybeSingle();
+        .limit(20);
 
-    if (existing.data) {
-        await interaction.reply({
-            content: `Jídlo už má otevřený post: <#${existing.data.discord_thread_id}>`,
-            ephemeral: true
-        });
-        return;
+    if (!existing.error && existing.data?.length) {
+        for (const row of existing.data) {
+            await removeStaleReviewPost(row);
+        }
+
+        const active = await supabase
+            .from("review_posts")
+            .select("*")
+            .eq("meal_id", mealId)
+            .limit(1)
+            .maybeSingle();
+
+        if (active.data) {
+            await interaction.reply({
+                content: `Jídlo už má otevřený post: <#${active.data.discord_thread_id}>`,
+                ephemeral: true
+            });
+            return;
+        }
     }
 
     const closesAt = new Date(Date.now() + hours * 60 * 60 * 1000);
@@ -436,19 +498,14 @@ async function openReviewModal(interaction) {
 
     const approved = await supabase
         .from("approved_reviews")
-        .select("id")
+        .select("id, rating, comment")
         .eq("meal_id", mealId)
         .eq("discord_user_id", interaction.user.id)
         .maybeSingle();
 
-    if (approved.data) {
-        await interaction.reply({ content: "Na toto jídlo už máte schválenou recenzi.", ephemeral: true });
-        return;
-    }
-
     const modal = new ModalBuilder()
         .setCustomId(`submit-review:${mealId}`)
-        .setTitle(post.data.meal_name.slice(0, 45));
+        .setTitle(approved.data ? "Přepsat starou recenzi" : post.data.meal_name.slice(0, 45));
 
     const rating = new TextInputBuilder()
         .setCustomId("rating")
@@ -457,6 +514,9 @@ async function openReviewModal(interaction) {
         .setRequired(true)
         .setMinLength(1)
         .setMaxLength(1);
+    if (approved.data) {
+        rating.setValue(String(approved.data.rating));
+    }
 
     const comment = new TextInputBuilder()
         .setCustomId("comment")
@@ -464,6 +524,9 @@ async function openReviewModal(interaction) {
         .setStyle(TextInputStyle.Paragraph)
         .setRequired(false)
         .setMaxLength(500);
+    if (approved.data?.comment) {
+        comment.setValue(approved.data.comment);
+    }
 
     modal.addComponents(
         new ActionRowBuilder().addComponents(rating),
@@ -496,6 +559,13 @@ async function submitReview(interaction) {
         return;
     }
 
+    const previous = await supabase
+        .from("approved_reviews")
+        .select("rating, comment")
+        .eq("meal_id", mealId)
+        .eq("discord_user_id", interaction.user.id)
+        .maybeSingle();
+
     const comment = interaction.fields.getTextInputValue("comment").trim();
     const { data, error } = await supabase
         .from("pending_reviews")
@@ -526,7 +596,7 @@ async function submitReview(interaction) {
 
         await moderationChannel.send({
             embeds: [new EmbedBuilder()
-                .setTitle(`Nová recenze: ${post.data.meal_name}`)
+                .setTitle(`${previous.data ? "Přepracovaná" : "Nová"} recenze: ${post.data.meal_name}`)
                 .addFields(
                     { name: "Uživatel", value: `${interaction.user.username} (${interaction.user.id})`, inline: true },
                     { name: "Hodnocení", value: `${rating}/5`, inline: true },
@@ -583,7 +653,7 @@ async function handleModerationButton(interaction) {
     }
 
     await supabase.from("pending_reviews").delete().eq("id", reviewId);
-    await interaction.update({ content: "Recenze byla schválena.", components: [] });
+    await interaction.update({ content: "Recenze byla schválena a případná stará recenze tohoto uživatele byla přepsána.", components: [] });
 }
 
 async function closeExpiredPosts() {
@@ -604,8 +674,9 @@ async function closeExpiredPosts() {
     }
 }
 
-client.once("ready", async () => {
+client.once("clientReady", async () => {
     await registerCommands();
+    await reconcileMissingReviewThreads();
     await closeExpiredPosts();
     await syncAutomaticReviewPosts().catch(error => {
         console.error("Automatická synchronizace se nepovedla:", error);

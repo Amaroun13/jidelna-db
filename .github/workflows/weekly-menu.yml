@@ -2,8 +2,8 @@ name: Aktualizovat týdenní jídelníček
 
 on:
   schedule:
-    - cron: "0 10 * * 3"
-    - cron: "0 11 * * 3"
+    - cron: "0 12 * * 5"
+    - cron: "0 13 * * 5"
   workflow_dispatch:
 
 permissions:
@@ -24,7 +24,7 @@ jobs:
       - name: Závislosti
         run: pip install requests
 
-      - name: Spustit pouze ve středu ve 12:00 podle Prahy
+      - name: Spustit pouze v pátek ve 14:00 podle Prahy
         id: cas
         run: |
           python - <<'PY'
@@ -32,7 +32,7 @@ jobs:
           import os
           from zoneinfo import ZoneInfo
           now = datetime.now(ZoneInfo("Europe/Prague"))
-          aktualizovat = now.weekday() == 2 and now.hour == 12
+          aktualizovat = now.weekday() == 4 and now.hour == 14
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
               output.write(f"aktualizovat={'true' if aktualizovat else 'false'}\n")
           PY
