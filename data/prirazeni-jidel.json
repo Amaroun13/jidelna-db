@@ -147,37 +147,37 @@
     "datum": "26.11.2026",
     "variant": "O1",
     "nazev": "Uzené vařené, šťouchané brambory, okurka",
-    "meal_id": null
+    "meal_id": 26
   },
   {
     "datum": "26.11.2026",
     "variant": "O2",
     "nazev": "Gnochi s kuřecím masem, listovým špenátem a smetanou",
-    "meal_id": null
+    "meal_id": 22
   },
   {
     "datum": "26.11.2026",
     "variant": "O3",
     "nazev": "Salát Coleslaw, kuřecí stripsy, bagetka",
-    "meal_id": null
+    "meal_id": 23
   },
   {
     "datum": "27.11.2026",
     "variant": "O1",
     "nazev": "Čínské nudle s kuřecím gyrosem a zeleninou",
-    "meal_id": null
+    "meal_id": 24
   },
   {
     "datum": "27.11.2026",
     "variant": "O2",
     "nazev": "Bramborový guláš, chléb",
-    "meal_id": null
+    "meal_id": 25
   },
   {
     "datum": "27.11.2026",
     "variant": "O3",
     "nazev": "Zeleninový salát s balkánským sýrem, pečivo",
-    "meal_id": null
+    "meal_id": 26
   },
   {
     "datum": "30.11.2026",

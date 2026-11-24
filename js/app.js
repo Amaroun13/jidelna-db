@@ -1,4 +1,5 @@
 let jidla = [];
+let indexJidel = [];
 let vyhledavac;
 const list = document.getElementById("list");
 const detail = document.getElementById("detail");
@@ -11,7 +12,7 @@ const obedZitra = document.getElementById("obed-zitra");
 async function nactiJidla() {
     const res = await fetch("data/jidla.json");
     jidla = await res.json();
-    const indexJidel = jidla.flatMap(jidlo =>
+    indexJidel = jidla.flatMap(jidlo =>
         nazvyJidla(jidlo).map(nazev => ({
             jidlo,
             nazev: normalizeText(nazev),
@@ -127,15 +128,24 @@ function aktualizujSeznam() {
     if (!vyhledavac) return;
     const text = normalizeText(search.value.trim());
     const presne = text
-        ? jidla.filter(jidlo => normalizeText(jidlo.nazev).includes(text))
+        ? indexJidel
+            .filter(polozka => polozka.nazev.includes(text))
+            .map(polozka => ({
+                ...polozka.jidlo,
+                zobrazovanyNazev: polozka.zobrazovanyNazev
+            }))
         : jidla;
-    const filtrovane = (presne.length
-        ? presne
-        : vyhledavac.search(text).map(vysledek => ({
+    const priblizne = text
+        ? vyhledavac.search(text).map(vysledek => ({
             ...vysledek.item.jidlo,
             zobrazovanyNazev: vysledek.item.zobrazovanyNazev
         }))
-    ).slice(0, 5);
+        : [];
+    const unikatni = new Map();
+    [...presne, ...priblizne].forEach(jidlo => {
+        if (!unikatni.has(jidlo.id)) unikatni.set(jidlo.id, jidlo);
+    });
+    const filtrovane = [...unikatni.values()].slice(0, 5);
     zobrazJidla(filtrovane);
     list.classList.remove("hidden");
 }

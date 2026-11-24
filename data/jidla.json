@@ -30,6 +30,9 @@
   {
     "id": 6,
     "nazev": "Filet z lososa, zeleninové trio v páře, opečené bramborové plátky",
+    "alternativniNazvy": [
+      "Filet z lososa, zeleninové trio, opečené bramborové plátky"
+    ],
     "obrazek": "images/6.webp"
   },
   {
@@ -113,7 +116,37 @@
   },
   {
     "id": 22,
-    "nazev": "Zeleninový salát s tuňákem a vejcem, dýňová bulka",
+    "nazev": "Gnochi s kuřecím masem, listovým špenátem a smetanou",
     "obrazek": "images/22.webp"
+  },
+  {
+    "id": 23,
+    "nazev": "Salát Coleslaw, kuřecí stripsy, bagetka",
+    "obrazek": "images/23.webp"
+  },
+  {
+    "id": 24,
+    "nazev": "Čínské nudle s kuřecím gyrosem a zeleninou",
+    "obrazek": "images/24.webp"
+  },
+  {
+    "id": 25,
+    "nazev": "Bramborový guláš, chléb",
+    "obrazek": "images/25.webp"
+  },
+  {
+    "id": 26,
+    "nazev": "Uzené vařené, šťouchané brambory, okurka",
+    "obrazek": "images/26.webp"
+  },
+  {
+    "id": 27,
+    "nazev": "Zeleninový salát s tuňákem a vejcem, dýňová bulka",
+    "obrazek": "images/27.webp"
+  },
+  {
+    "id": 28,
+    "nazev": "Zeleninový salát s tuňákem a vejcem, dýňová bulka",
+    "obrazek": "images/28.webp"
   }
 ]
