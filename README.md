@@ -16,7 +16,7 @@ GitHub Pages
 
 GitHub Actions
  |
- +-- každou středu stahuje jídelníček
+ +-- každou středu ve 14:00 pražského času stahuje jídelníček
  +-- aktualizuje soubor pro ruční přiřazování meal_id
 
 Discord bot na platformě Pella
@@ -96,9 +96,9 @@ Systém dodržuje následující pravidla:
 
 ## Přiřazování jídel
 
-Každou středu spustí GitHub Actions proces, který stáhne aktuální jídelníček do souboru `jidelnicek.json` a následně spustí skript `priprav_prirazeni.py`.
+Každou středu ve 14:00 podle časového pásma Europe/Prague spustí GitHub Actions proces, který stáhne aktuální jídelníček do souboru `jidelnicek.json` a následně spustí skript `priprav_prirazeni.py`. Časové pásmo je nastavené přímo u plánované události, takže GitHub automaticky zohlední přechod mezi zimním a letním časem.
 
-Tento skript doplní nová jídla do souboru `data/prirazeni-jidel.json`.
+Tento skript odstraní z `data/prirazeni-jidel.json` položky starší než dnešní datum a doplní chybějící jídla. U jídla, jehož název nebo alternativní název odpovídá položce v `data/jidla.json` (bez ohledu na velikost písmen a diakritiku), automaticky nastaví příslušné `meal_id`. Existující ručně vyplněné `meal_id` zachová; jídla bez shody je stále nutné přiřadit ručně. Výjimkou jsou názvy `Oběd 1`, `Oběd 2` a `Oběd 3`, které nahradí názvem z nově staženého jídelníčku.
 
 Příklad nového záznamu:
 
@@ -125,8 +125,9 @@ Správný identifikátor jídla z databáze `data/jidla.json` je nutné doplnit 
 ## Supabase
 
 1. Vytvořte projekt na adrese https://supabase.com.
-2. V editoru SQL spusťte databázovou migraci:
-   `supabase/migrations/20261122_discord_reviews.sql`.
+2. V editoru SQL spusťte databázové migrace v pořadí:
+   - `supabase/migrations/20261122_discord_reviews.sql`,
+   - `supabase/migrations/20261125_review_summary.sql`.
 3. Pomocí kontrolního SQL dotazu ověřte existenci následujících tabulek:
    - `review_posts`,
    - `pending_reviews`,
@@ -244,7 +245,7 @@ Používaný workflow:
 
 `.github/workflows/weekly-menu.yml`
 
-Každou středu se automaticky spustí proces, který stáhne aktuální jídelníček a aktualizuje soubor `data/prirazeni-jidel.json`.
+Každou středu ve 14:00 podle časového pásma Europe/Prague se automaticky spustí proces, který stáhne aktuální jídelníček a aktualizuje soubor `data/prirazeni-jidel.json`. Starší položky se při aktualizaci odstraní. Časové pásmo Europe/Prague automaticky zohledňuje zimní a letní čas.
 
 Pro správné fungování workflow je nutné zajistit:
 
@@ -280,7 +281,7 @@ Po dokončení nasazení je nutné ověřit následující funkce:
 4. Tlačítko pro napsání recenze správně otevře modální formulář.
 5. Moderátorský kanál obdrží odeslanou recenzi.
 6. Po schválení se recenze uloží do tabulky `approved_reviews`.
-7. Stránka příslušného jídla zobrazí průměrné hodnocení a seznam schválených recenzí.
+7. Stránka příslušného jídla zobrazí průměrné hodnocení, datum schválení recenzí a umožní jejich řazení podle hodnocení nebo data. Recenze se načítají po deseti a další lze zobrazit tlačítkem.
 
 ## Řešení problémů se spuštěním bota
 

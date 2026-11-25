@@ -2,11 +2,16 @@
 <html lang="cs">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JídelnaDB</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
   </head>
   <body>
-    <h1>Jídelní lístek</h1>
+    <h1>Jidelna-db</h1>
 
     <input id="search" type ="text" placeholder="Hledat jídlo...">
 
@@ -31,11 +36,21 @@
     <div id="detail" class="hidden">
       <button id="back" type="button">Zpět</button>
       <h2 id="detail-nazev"></h2>
-      <img id="detail-img" src="">
+      <img id="detail-img" src="" alt="">
+      <p id="detail-img-fallback" class="hidden">Jídlo zatím před foťákem neudělalo sýýýýýr :)</p>
       <section id="reviews" aria-live="polite">
         <h3>Recenze</h3>
         <p id="reviews-score">Načítám hodnocení...</p>
+        <label for="reviews-sort">Seřadit recenze:</label>
+        <select id="reviews-sort">
+          <option value="date-desc">Datum: nejnovější první</option>
+          <option value="date-asc">Datum: nejstarší první</option>
+          <option value="rating-desc">Hodnocení: nejvyšší první</option>
+          <option value="rating-asc">Hodnocení: nejnižší první</option>
+        </select>
         <div id="reviews-list"></div>
+        <p id="reviews-load-error" class="hidden" role="alert"></p>
+        <button id="reviews-load-more" class="hidden" type="button">Načíst dalších 10 recenzí</button>
         <a id="review-discord" href="#" target="_blank" rel="noopener" class="hidden">
           Přidat recenzi přes Discord
         </a>

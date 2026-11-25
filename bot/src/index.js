@@ -11,6 +11,7 @@ import {
     PermissionFlagsBits,
     REST,
     Routes,
+    StringSelectMenuBuilder,
     TextInputBuilder,
     TextInputStyle,
     ThreadAutoArchiveDuration
@@ -507,20 +508,21 @@ async function openReviewModal(interaction) {
         .setCustomId(`submit-review:${mealId}`)
         .setTitle(approved.data ? "Přepsat starou recenzi" : post.data.meal_name.slice(0, 45));
 
-    const rating = new TextInputBuilder()
+    const rating = new StringSelectMenuBuilder()
         .setCustomId("rating")
-        .setLabel("Hodnocení 1 až 5")
-        .setStyle(TextInputStyle.Short)
-        .setRequired(true)
-        .setMinLength(1)
-        .setMaxLength(1);
-    if (approved.data) {
-        rating.setValue(String(approved.data.rating));
-    }
+        .setPlaceholder("Vyberte 1 až 5")
+        .setMinValues(1)
+        .setMaxValues(1)
+        .addOptions(
+            ...[1, 2, 3, 4, 5].map(value => ({
+                label: String(value),
+                value: String(value),
+                default: approved.data?.rating === value
+            }))
+        );
 
     const comment = new TextInputBuilder()
         .setCustomId("comment")
-        .setLabel("Komentář")
         .setStyle(TextInputStyle.Paragraph)
         .setRequired(false)
         .setMaxLength(500);
@@ -528,9 +530,13 @@ async function openReviewModal(interaction) {
         comment.setValue(approved.data.comment);
     }
 
-    modal.addComponents(
-        new ActionRowBuilder().addComponents(rating),
-        new ActionRowBuilder().addComponents(comment)
+    modal.addLabelComponents(
+        label => label
+            .setLabel("Počet hvězdiček")
+            .setStringSelectMenuComponent(rating),
+        label => label
+            .setLabel("Komentář")
+            .setTextInputComponent(comment)
     );
 
     await interaction.showModal(modal);
@@ -538,7 +544,7 @@ async function openReviewModal(interaction) {
 
 async function submitReview(interaction) {
     const mealId = Number(interaction.customId.split(":")[1]);
-    const ratingText = interaction.fields.getTextInputValue("rating").trim();
+    const [ratingText] = interaction.fields.getStringSelectValues("rating");
     const rating = Number(ratingText);
 
     if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
@@ -644,7 +650,8 @@ async function handleModerationButton(interaction) {
         discord_user_id: pending.data.discord_user_id,
         discord_username: pending.data.discord_username,
         rating: pending.data.rating,
-        comment: pending.data.comment
+        comment: pending.data.comment,
+        approved_at: new Date().toISOString()
     }, { onConflict: "meal_id,discord_user_id" });
 
     if (error) {

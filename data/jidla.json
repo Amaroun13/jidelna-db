@@ -146,7 +146,97 @@
   },
   {
     "id": 28,
-    "nazev": "Zeleninový salát s tuňákem a vejcem, dýňová bulka",
+    "nazev": "Kuřecí maso v mrkvi, americké brambory",
     "obrazek": "images/28.webp"
+  },
+  {
+    "id": 29,
+    "nazev": "Knedlíky s ovocnou náplní a ořechovou posypkou",
+    "obrazek": "images/29.webp"
+  },
+  {
+    "id": 30,
+    "nazev": "Zeleninový salát s tuňákem a vejcem, dýňová bulka",
+    "obrazek": "images/30.webp"
+  },
+  {
+    "id": 31,
+    "nazev": "Pikantní kuřecí nudličky, těstoviny",
+    "obrazek": "images/31.webp"
+  },
+  {
+    "id": 32,
+    "nazev": "Vařené vejce, koprová omáčka, brambory",
+    "obrazek": "images/32.webp"
+  },
+  {
+    "id": 33,
+    "nazev": "Zeleninový salát se sojovým masem, bulka dýňová",
+    "obrazek": "images/33.webp"
+  },
+  {
+    "id": 34,
+    "nazev": "Vepřové výpečky, kysané zelí, knedlík (houskový/ celozrnný)",
+    "obrazek": "images/34.webp"
+  },
+  {
+    "id": 35,
+    "nazev": "Hrachová kaše, opečený klobás, chléb, okurka",
+    "obrazek": "images/35.webp"
+  },
+  {
+    "id": 36,
+    "nazev": "Těstovinový salát s rajčaty, bazalkou a sýrem",
+    "obrazek": "images/36.webp"
+  },
+  {
+    "id": 37,
+    "nazev": "Krůtí špíz, brambory s pažitkou, obloha",
+    "obrazek": "images/37.webp"
+  },
+  {
+    "id": 38,
+    "nazev": "Filet z tresky tmavé na bylinkách, zeleninový bulgur",
+    "obrazek": "images/38.webp"
+  },
+  {
+    "id": 39,
+    "nazev": "Zeleninový salát s luštěninami, kváskový chléb",
+    "obrazek": "images/39.webp"
+  },
+  {
+    "id": 40,
+    "nazev": "Zeleninový salát s balkánským sýrem, pečivo",
+    "obrazek": "images/40.webp"
+  },
+  {
+    "id": 41,
+    "nazev": "Pečené kuřecí stehno na másle, dušená rýže, zelný salát s koprem",
+    "obrazek": "images/41.webp"
+  },
+  {
+    "id": 42,
+    "nazev": "Kančí se šípkovou omáčkou, karlovarský knedlík",
+    "obrazek": "images/42.webp"
+  },
+  {
+    "id": 43,
+    "nazev": "Salát z divoké rýže",
+    "obrazek": "images/43.webp"
+  },
+  {
+    "id": 44,
+    "nazev": "Smažený vepřový řízek, brambory s máslem, obloha",
+    "obrazek": "images/44.webp"
+  },
+  {
+    "id": 45,
+    "nazev": "Bramborové šišky s mákem,  polévané máslem",
+    "obrazek": "images/45.webp"
+  },
+  {
+    "id": 46,
+    "nazev": "Zeleninový salát s cibulovými kroužky, pečivo",
+    "obrazek": "images/46.webp"
   }
 ]

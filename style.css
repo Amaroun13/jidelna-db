@@ -121,6 +121,12 @@ body.detail-open > #obed-menu {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
+#detail-img-fallback {
+    margin: 8px 0;
+    color: #4d3520;
+    font-style: italic;
+}
+
 #reviews {
     position: relative;
     z-index: 1;
@@ -141,6 +147,21 @@ body.detail-open > #obed-menu {
 #reviews-list {
     display: grid;
     gap: 8px;
+    margin-top: 12px;
+}
+
+#reviews > label,
+#reviews > select {
+    display: block;
+    width: 100%;
+}
+
+#reviews > label {
+    margin-bottom: 4px;
+}
+
+#reviews > select {
+    padding: 8px;
 }
 
 .review {
@@ -152,6 +173,18 @@ body.detail-open > #obed-menu {
 .review strong {
     display: block;
     margin-bottom: 4px;
+}
+
+.review time {
+    display: block;
+    margin-bottom: 6px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+#reviews-load-more:not(.hidden) {
+    display: block;
+    margin: 12px auto;
 }
 
 #review-discord {
@@ -191,9 +224,41 @@ button:hover {
 button:active {
     transform: translateY(1px);
 }
-/*
- display: block;
-    width: calc(100% - 40px);
-    max-width: 360px;
-    margin: 20px auto 0;
-    box-sizing: border-box;
+
+@media (max-width: 600px) {
+    body {
+        max-width: none;
+        margin: 0;
+    }
+
+    h2 {
+        width: 100%;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    #search,
+    #list {
+        width: 100%;
+        max-width: none;
+    }
+
+    #search {
+        margin: 12px 0;
+        border-radius: 0;
+    }
+
+    #list {
+        border-right: 0;
+        border-left: 0;
+        border-radius: 0;
+    }
+
+    #detail {
+        padding: 8px 0;
+    }
+
+    #reviews {
+        border-radius: 0;
+        text-align: center;
+    }

@@ -5,9 +5,15 @@ const list = document.getElementById("list");
 const detail = document.getElementById("detail");
 const search = document.getElementById("search");
 const detailImg = document.getElementById("detail-img");
+const detailImgFallback = document.getElementById("detail-img-fallback");
 const body = document.body;
 const obedDnes = document.getElementById("obed-dnes");
 const obedZitra = document.getElementById("obed-zitra");
+
+detailImg.addEventListener("error", () => {
+    detailImg.classList.add("hidden");
+    detailImgFallback.classList.remove("hidden");
+});
 
 async function nactiJidla() {
     const res = await fetch("data/jidla.json");
@@ -116,7 +122,15 @@ function zobrazDetail(jidlo) {
     detail.classList.remove("hidden");
 
     document.getElementById("detail-nazev").textContent = jidlo.nazev;
-    detailImg.src = jidlo.obrazek;
+    detailImg.classList.remove("hidden");
+    detailImgFallback.classList.add("hidden");
+    detailImg.alt = `Fotografie jídla ${jidlo.nazev}`;
+    if (jidlo.obrazek) {
+        detailImg.src = jidlo.obrazek;
+    } else {
+        detailImg.removeAttribute("src");
+        detailImgFallback.classList.remove("hidden");
+    }
     nactiRecenze(jidlo.id);
 }
 
