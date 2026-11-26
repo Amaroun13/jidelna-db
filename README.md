@@ -6,6 +6,8 @@ Frontend je hostován na GitHub Pages. Recenze odeslané přes Discord procháze
 
 Aplikace JidelnaDB byla vytvořena pomocí přístupu vibe coding, tedy s využitím AI asistovaných nástrojů pro vývoj softwaru.
 
+Zdrojový kód tohoto projektu je licencován pod GNU GPL v3.0; viz soubor LICENSE. Obrázky ve složce `images/` jsou z GPL vyloučeny a řídí se podmínkami v souboru `ASSET-LICENSES.md`.
+
 ## Jak systém funguje
 
 ```text
@@ -35,6 +37,7 @@ Supabase
 
 - `index.html` — hlavní statická stránka.
 - `style.css` — definice vzhledu aplikace.
+- `js/theme.js` — přepínání světlého a tmavého režimu s uložením volby v prohlížeči.
 - `js/app.js` — zpracování jídelníčku, vyhledávání a zobrazování stránek jednotlivých jídel.
 - `js/reviews.js` — zobrazování schválených recenzí.
 - `js/reviews-config.js` — veřejná konfigurace Supabase a odkazu na pozvánku na Discord.
@@ -46,6 +49,8 @@ Supabase
 - `bot/src/index.js` — zdrojový kód Discord bota.
 - `supabase/migrations/20261122_discord_reviews.sql` — databázová migrace.
 - `.github/workflows/weekly-menu.yml` — workflow pro pravidelnou aktualizaci jídelníčku.
+
+Web nabízí přepínač tmavého režimu. Při první návštěvě respektuje nastavení systému; zvolený režim se uloží v prohlížeči.
 
 ## Stránky jednotlivých jídel
 
@@ -300,12 +305,7 @@ Pokud se bota nepodaří spustit, zkontrolujte následující:
 
 Do budoucna se počítá s následujícími úpravami a rozšířeními projektu:
 
-- Vylepšení celkového designu webu a jeho responzivního zobrazení.
-- Vytvoření loga JidelnaDB.
 - Barevné rozlišení otevřených a uzavřených vláken ve fóru.
-- Doplnění piktogramů jídel a sjednocení stylu fotografií.
-- Vytváření vlastních ilustrací jednotlivých témat jídel.
-- Administrátorský přehled pro moderátory.
 - Automatická detekce a odstraňování chybných nebo spamových recenzí.
 - Historický přehled a statistiky hodnocení.
-- Podpora tmavého režimu.
+- Podpora recenzí a fotek polévek.

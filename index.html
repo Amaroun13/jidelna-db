@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JídelnaDB</title>
+    <script src="js/theme.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
@@ -12,6 +13,15 @@
   </head>
   <body>
     <h1>Jidelna-db</h1>
+    <button id="theme-toggle" type="button" aria-label="Zapnout tmavý režim" aria-pressed="false" title="Zapnout tmavý režim">
+      <svg class="theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"></path>
+      </svg>
+      <svg class="theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+      </svg>
+    </button>
 
     <input id="search" type ="text" placeholder="Hledat jídlo...">
 
@@ -56,6 +66,13 @@
         </a>
       </section>
     </div>
+
+    <footer id="site-footer">
+      © Amaroun13 ·
+      <a href="https://github.com/Amaroun13/jidelna-db" target="_blank" rel="noopener noreferrer">
+        Projekt na GitHubu
+      </a>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
